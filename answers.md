@@ -1,13 +1,8 @@
-Questions
-
+Questions:
 1. How can you make pink?
-
 2. How can you make yellow?
-
 3. How can you make purple?
-
 4. How can you make white?
-
 5. How can you make dark gray?
 
 1. A large amount of red and blue with very small amount of green.
