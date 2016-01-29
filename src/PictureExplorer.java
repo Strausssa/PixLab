@@ -1,5 +1,4 @@
-
-import java.awt.*;
+java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.image.*;
@@ -796,8 +795,9 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 	 * Test Main. It will explore the beach
 	 */
 	public static void main(String args[]) {
-		Picture pix = new Picture("beach.jpg");
-		pix.explore();
+	
+		Picture p = new Picture("myPicture.jpg");
+		Picture smallP = p.scale(0.25,0.25);
+		smallP.write("smallMyPicture.jpg");
+		smallP.explore();
 	}
-
-}
