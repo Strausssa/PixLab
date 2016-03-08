@@ -94,6 +94,70 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
+	
+	public void keepOnlyBlue() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setGreen(0);
+				pixelObj.setRed(0);
+			}
+		}
+	}
+	
+	public void keepOnlyRed() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setGreen(0);
+				pixelObj.setBlue(0);
+			}
+		}
+	}
+	
+	public void keepOnlyGreen() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setBlue(0);
+				pixelObj.setRed(0);
+			}
+		}
+	}
+	
+	public void negate() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setGreen(255-pixelObj.getGreen());
+				pixelObj.setRed(255-pixelObj.getRed());
+				pixelObj.setBlue(255-pixelObj.getBlue());
+			}
+		}
+	}
+	
+	public void grayscale() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				int avg = (pixelObj.getGreen() + pixelObj.getBlue() + pixelObj.getRed())/3;
+				pixelObj.setBlue(avg);
+				pixelObj.setRed(avg);
+				pixelObj.setGreen(avg);
+			}
+		}
+	}
+	
+	public void fixUnderwater() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setBlue(pixelObj.getBlue() + 20);
+				pixelObj.setRed(pixelObj.getGreen() - 30);
+				pixelObj.setGreen(pixelObj.getRed() - 30);
+			}
+		}
+	}
 
 	/**
 	 * Method that mirrors the picture around a vertical mirror in the center of
